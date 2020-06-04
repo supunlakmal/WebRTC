@@ -6,16 +6,17 @@ var fs = require('fs');
 var https = require('https');
 
 // link  your  https  certicate  path 
-var options = {
-    key: fs.readFileSync('/../../etc/ssl/private/apache-selfsigned.key'),
-    cert: fs.readFileSync('/../../etc/ssl/certs/apache-selfsigned.crt')
-};
+// var options = {
+//     key: fs.readFileSync('/../../etc/ssl/private/apache-selfsigned.key'),
+//     cert: fs.readFileSync('/../../etc/ssl/certs/apache-selfsigned.crt')
+// };
 
 
-var main = https.createServer(options, app);
+// var main = https.createServer(options, app);
+var main = https.createServer(app);
 
-var server = main.listen(8443, function() {
-    console.log('server up and running at %s port', 8443);
+var server = main.listen(4000, function() {
+    console.log('server up and running at %s port', 4000);
 });
 
 /*var server = app.listen(443, function () {
